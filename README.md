@@ -20,11 +20,11 @@
 
 ## Features
 
-1. **Multi-Scale Feature Learning**  
+- **Multi-Scale Feature Learning**  
   Extracts global and local layout patterns from large-scale source designs.
-2. **Cross-Design Adaptation**  
+- **Cross-Design Adaptation**  
   Generalizes learned representations to target designs with different data distributions.
-3. **Dataset & Evaluation Support**  
+- **Dataset & Evaluation Support**  
   Provides scripts for dataset building and metrics (NRMSE, SSIM) for congestion prediction evaluation.
 
 
