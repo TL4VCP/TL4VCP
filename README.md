@@ -42,6 +42,7 @@
 
 ## Code Structure
 
+```txt
 .
 ├── datasets/                     # Dataset building and preprocessing modules
 │   ├── __init__.py
@@ -70,32 +71,35 @@ This project has been tested with **Python 3.8+**.
 
 The core dependencies include:
 
-- addict==2.4.0  
-- certifi  
-- charset-normalizer==2.1.1  
-- idna==3.3  
-- imageio==2.21.1  
-- joblib==1.2.0  
-- mmcv==1.6.1  
-- numpy==1.23.2  
-- opencv-python==4.6.0.66  
-- packaging==21.3  
-- Pillow==9.3.0  
-- psutil==5.9.1  
-- pyparsing==3.0.9  
-- pyutil==3.3.0  
-- PyWavelets==1.3.0  
-- PyYAML==6.0  
-- requests==2.28.1  
-- scikit-image==0.19.3  
-- scikit-learn==1.1.2  
-- scipy==1.9.0  
-- threadpoolctl==3.1.0  
-- tifffile==2022.8.12  
-- tqdm==4.64.0  
-- typing_extensions==4.3.0  
-- urllib3==1.26.12  
-- yapf==0.32.0  
+## 🛠️ Environment Requirements
+
+```txt
+addict==2.4.0
+certifi
+charset-normalizer==2.1.1
+idna==3.3
+imageio==2.21.1
+joblib==1.2.0
+mmcv==1.6.1
+numpy==1.23.2
+opencv-python==4.6.0.66
+packaging==21.3
+Pillow==9.3.0
+psutil==5.9.1
+pyparsing==3.0.9
+pyutil==3.3.0
+PyWavelets==1.3.0
+PyYAML==6.0
+requests==2.28.1
+scikit-image==0.19.3
+scikit-learn==1.1.2
+scipy==1.9.0
+threadpoolctl==3.1.0
+tifffile==2022.8.12
+tqdm==4.64.0
+typing_extensions==4.3.0
+urllib3==1.26.12
+yapf==0.32.0
 
 You can install all dependencies using:
 
