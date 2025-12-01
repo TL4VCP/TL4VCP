@@ -24,20 +24,14 @@
 
 ## Features
 
-- **Generalizable Multi-Scale Feature Learning**  
-  Learns multi-level spatial representations from large-scale source designs to capture both global and local layout patterns.
+- 1. **Multi-Scale Feature Learning**  
+  Extracts global and local layout patterns from large-scale source designs.
 
-- **Cross-Design Adaptation**  
-  Transfers knowledge from source datasets to target designs with different distribution characteristics, ensuring robust performance across heterogeneous chip layouts.
+- 2. **Cross-Design Adaptation**  
+  Generalizes learned representations to target designs with different data distributions.
 
-- **Low-Resource Design Enhancement**  
-  Improves congestion prediction accuracy on target placement designs with limited data availability.
-
-- **Dataset Preparation Scripts**  
-  Provides modular tools for dataset construction, augmentation, and loading, supporting Congestion and SuperBlue/ISPD benchmarks.
-
-- **Comprehensive Evaluation Pipeline**  
-  Includes testing utilities and metrics (NRMSE, SSIM) for rigorous evaluation of congestion prediction models.
+- 3. **Dataset & Evaluation Support**  
+  Provides scripts for dataset building and metrics (NRMSE, SSIM) for congestion prediction evaluation.
 
 
 ## Code Structure
