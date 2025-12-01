@@ -24,13 +24,11 @@
 
 ## Features
 
-- 1. **Multi-Scale Feature Learning**  
+1. **Multi-Scale Feature Learning**  
   Extracts global and local layout patterns from large-scale source designs.
-
-- 2. **Cross-Design Adaptation**  
+2. **Cross-Design Adaptation**  
   Generalizes learned representations to target designs with different data distributions.
-
-- 3. **Dataset & Evaluation Support**  
+3. **Dataset & Evaluation Support**  
   Provides scripts for dataset building and metrics (NRMSE, SSIM) for congestion prediction evaluation.
 
 
@@ -68,13 +66,7 @@ The core dependencies include:
 ```txt
 addict==2.4.0
 certifi
-charset-normalizer==2.1.1
-idna==3.3
-imageio==2.21.1
-joblib==1.2.0
-mmcv==1.6.1
-numpy==1.23.2
-opencv-python==4.6.0.66 ....
+charset-normalizer==2.1.1 ....
 ```
 
 You can install all dependencies using:
