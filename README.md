@@ -12,7 +12,7 @@
 - [Features](#features)
 - [Code Structure](#Code-Structure)
 - [Environment Requirements](#environment-requirements)
-- [Data Generation Pipeline](#data-generation-pipeline)
+- [Congestion Prediciton Pipeline](#congestion-prediciton-pipeline)
   - [1. Skeleton Generation](#1-skeleton-generation)
   - [2. Postprocessing](#2-postprocessing)
   - [3. Cone Code Generation](#3-cone-code-generation)
@@ -88,6 +88,7 @@ You can install all dependencies using:
 pip install -r requirements.txt
 ```
 
+## Congestion Prediciton Pipeline
 
 ### 1. Process RTL files (foler: "ys_script")
 
