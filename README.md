@@ -10,6 +10,7 @@
 ## Table of Contents
 
 - [Features](#features)
+- [Code Structure](#Code-Structure)
 - [Environment Requirements](#environment-requirements)
 - [Data Generation Pipeline](#data-generation-pipeline)
   - [1. Skeleton Generation](#1-skeleton-generation)
@@ -21,7 +22,87 @@
 
 ---
 
+## Features
+
+- **Generalizable Multi-Scale Feature Learning**  
+  Learns multi-level spatial representations from large-scale source designs to capture both global and local layout patterns.
+
+- **Cross-Design Adaptation**  
+  Transfers knowledge from source datasets to target designs with different distribution characteristics, ensuring robust performance across heterogeneous chip layouts.
+
+- **Low-Resource Design Enhancement**  
+  Improves congestion prediction accuracy on target placement designs with limited data availability.
+
+- **Dataset Preparation Scripts**  
+  Provides modular tools for dataset construction, augmentation, and loading, supporting Congestion and SuperBlue/ISPD benchmarks.
+
+- **Comprehensive Evaluation Pipeline**  
+  Includes testing utilities and metrics (NRMSE, SSIM) for rigorous evaluation of congestion prediction models.
+
+
 ## Code Structure
+
+.
+├── datasets/                     # Dataset building and preprocessing modules
+│   ├── __init__.py
+│   ├── augmentation.py           # Data augmentation for RUDY, macro regions, etc.
+│   ├── build_dataset.py          # Unified dataset builder
+│   ├── congestion_dataset.py     # Dataset class for congestion prediction tasks
+│   └── superblue_dataset.py      # Data loader for SuperBlue / ISPD datasets
+│
+├── models/                       # Model architectures 
+│
+├── utils/                        # Utility functions
+│   ├── configs.py                # Configuration management for training/inference
+│   ├── losses.py                 # Loss functions (SSIM, L1, hybrid losses)
+│   └── metrics.py                # Evaluation metrics (NRMSE, SSIM)
+│
+├── train.py                      # Main training script
+├── test.py                       # Inference and testing script
+├── requirements.txt              # Python dependencies
+└── README.md
+
+## Environment Requirements
+
+This project has been tested with **Python 3.8+**.
+
+### Required Python Packages
+
+The core dependencies include:
+
+- addict==2.4.0  
+- certifi  
+- charset-normalizer==2.1.1  
+- idna==3.3  
+- imageio==2.21.1  
+- joblib==1.2.0  
+- mmcv==1.6.1  
+- numpy==1.23.2  
+- opencv-python==4.6.0.66  
+- packaging==21.3  
+- Pillow==9.3.0  
+- psutil==5.9.1  
+- pyparsing==3.0.9  
+- pyutil==3.3.0  
+- PyWavelets==1.3.0  
+- PyYAML==6.0  
+- requests==2.28.1  
+- scikit-image==0.19.3  
+- scikit-learn==1.1.2  
+- scipy==1.9.0  
+- threadpoolctl==3.1.0  
+- tifffile==2022.8.12  
+- tqdm==4.64.0  
+- typing_extensions==4.3.0  
+- urllib3==1.26.12  
+- yapf==0.32.0  
+
+You can install all dependencies using:
+
+```bash
+pip install -r requirements.txt
+
+
 
 ### 1. Process RTL files (foler: "ys_script")
 
