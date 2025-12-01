@@ -71,9 +71,6 @@ This project has been tested with **Python 3.8+**.
 ### Required Python Packages
 
 The core dependencies include:
-
-## 🛠️ Environment Requirements
-
 ```txt
 addict==2.4.0
 certifi
