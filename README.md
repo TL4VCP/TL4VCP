@@ -169,7 +169,55 @@ This combinatorial analysis allows us to quantify the contribution of each featu
 **Abbreviations:** $MR$ = Macro Region, $CD$ = Cell Density, $R$ = RUDY, $RP$ = RUDY pin
 
 
+<div style="display: flex; gap: 40px; flex-wrap: wrap;">
+
+<!-- Table 1 -->
+<table border="1" cellspacing="0" cellpadding="4">
+  <caption><b>Table 1. Performance (Pretrained on CircuitNet-N28)</b></caption>
+  <tr><th>Comb</th><th>sb11</th><th>sb14</th><th>sb16</th><th>sb19</th><th>Avg</th></tr>
+  <tr><td>{MR}</td><td>0.0478/0.6954</td><td>0.0615/0.4616</td><td>0.0589/0.6489</td><td>0.053/0.5827</td><td>0.0553/0.5971</td></tr>
+  <tr><td>{CD}</td><td>0.0442/0.6309</td><td>0.0452/0.5335</td><td>0.0581/0.6472</td><td>0.0356/0.6887</td><td>0.0458/0.6251</td></tr>
+  <tr><td>{R}</td><td>0.0442/0.597</td><td>0.0335/0.6388</td><td>0.0691/0.5222</td><td>0.069/0.0427</td><td>0.189/0.4502</td></tr>
+  <tr><td>{RP}</td><td>0.0551/0.1143</td><td>0.0345/0.3404</td><td>0.0351/0.1086</td><td>0.0418/0.2376</td><td>0.0541/0.2002</td></tr>
+  <tr><td>{MR,CD}</td><td>0.0365/0.7365</td><td>0.0468/0.5255</td><td>0.0657/0.6477</td><td>0.0394/0.6592</td><td>0.0471/0.6452</td></tr>
+  <tr><td>{MR,R}</td><td>0.0371/0.7528</td><td>0.0382/0.5911</td><td>0.0605/0.6366</td><td>0.037/0.6713</td><td>0.0432/0.663</td></tr>
+  <tr><td>{MR,RP}</td><td>0.0401/0.7359</td><td>0.0518/0.4978</td><td>0.0576/0.6548</td><td>0.0452/0.6178</td><td>0.0487/0.6266</td></tr>
+  <tr><td>{CD,R}</td><td>0.0424/0.6237</td><td>0.0408/0.5632</td><td>0.0574/0.6584</td><td>0.0385/0.665</td><td>0.0448/0.6276</td></tr>
+  <tr><td>{CD,RP}</td><td>0.0437/0.6031</td><td>0.0664/0.4567</td><td>0.0604/0.6353</td><td>0.0479/0.6247</td><td>0.0559/0.58</td></tr>
+  <tr><td>{R,RP}</td><td>0.0436/0.5822</td><td>0.0311/0.6428</td><td>0.0728/0.4589</td><td>0.0458/0.5516</td><td>0.0483/0.5589</td></tr>
+  <tr><td>{MR,CD,R}</td><td>0.0371/0.7247</td><td>0.0347/0.6102</td><td>0.0643/0.599</td><td>0.0338/0.6521</td><td>0.0425/0.6465</td></tr>
+  <tr><td>{MR,CD,RP}</td><td>0.0397/0.6607</td><td>0.0585/0.5325</td><td>0.0673/0.5438</td><td>0.037/0.6594</td><td>0.045/0.6115</td></tr>
+  <tr><td>{MR,R,RP}</td><td>0.0363/0.736</td><td>0.0304/0.5925</td><td>0.0634/0.5978</td><td>0.0388/0.669</td><td><b>0.0422/0.6488</b></td></tr>
+  <tr><td>{CD,R,RP}</td><td>0.0515/0.2864</td><td>0.0305/0.6251</td><td>0.0727/0.4158</td><td>0.0417/0.514</td><td>0.0493/0.4601</td></tr>
+  <tr><td>{MR,CD,R,RP}</td><td>0.0487/0.6954</td><td>0.0615/0.4616</td><td>0.0589/0.6489</td><td>0.053/0.5827</td><td>0.0555/0.5972</td></tr>
+</table>
+
+<!-- Table 2 -->
+<table border="1" cellspacing="0" cellpadding="4">
+  <caption><b>Table 2. Performance (Pretrained on CircuitNet-N14)</b></caption>
+  <tr><th>Comb</th><th>sb11</th><th>sb14</th><th>sb16</th><th>sb19</th><th>Avg</th></tr>
+  <tr><td>{MR}</td><td>0.0393/0.7371</td><td>0.0535/0.4958</td><td>0.0592/0.6448</td><td>0.0409/0.6527</td><td>0.048225/0.6326</td></tr>
+  <tr><td>{CD}</td><td>0.0424/0.7303</td><td>0.0540/0.4926</td><td>0.0607/0.6348</td><td>0.0458/0.6239</td><td>0.050725/0.6204</td></tr>
+  <tr><td>{R}</td><td>0.0377/0.7493</td><td>0.0477/0.5223</td><td>0.0574/0.6681</td><td>0.0366/0.6805</td><td>0.04485/0.65505</td></tr>
+  <tr><td>{RP}</td><td>0.0596/0.6484</td><td>0.0784/0.4076</td><td>0.0600/0.6419</td><td>0.0690/0.5162</td><td>0.06675/0.553525</td></tr>
+  <tr><td>{MR,CD}</td><td>0.0567/0.6654</td><td>0.0735/0.4232</td><td>0.0594/0.6410</td><td>0.0616/0.5431</td><td>0.0628/0.568175</td></tr>
+  <tr><td>{MR,R}</td><td>0.0365/0.7605</td><td>0.0399/0.5769</td><td>0.0594/0.6419</td><td>0.0431/0.6304</td><td>0.044725/0.652425</td></tr>
+  <tr><td>{MR,RP}</td><td>0.0406/0.7378</td><td>0.0599/0.4714</td><td>0.0533/0.6735</td><td>0.0463/0.6253</td><td>0.185025/0.6270</td></tr>
+  <tr><td>{CD,R}</td><td>0.0442/0.5578</td><td>0.0384/0.6033</td><td>0.0664/0.5728</td><td>0.0365/0.6696</td><td>0.046375/0.600875</td></tr>
+  <tr><td>{CD,RP}</td><td>0.0417/0.7270</td><td>0.0523/0.5024</td><td>0.0590/0.6445</td><td>0.0480/0.6117</td><td>0.05025/0.6214</td></tr>
+  <tr><td>{R,RP}</td><td>0.0357/0.7739</td><td>0.0418/0.5654</td><td>0.0607/0.6520</td><td>0.0414/0.6571</td><td>0.0449/0.6621</td></tr>
+  <tr><td>{MR,CD,R}</td><td>0.0356/0.7596</td><td>0.0369/0.5994</td><td>0.0626/0.6071</td><td>0.0369/0.6779</td><td>0.0430/0.6610</td></tr>
+  <tr><td>{MR,CD,RP}</td><td>0.0372/0.7515</td><td>0.0439/0.5409</td><td>0.0591/0.6472</td><td>0.0411/0.6463</td><td>0.045325/0.646475</td></tr>
+  <tr><td>{MR,R,RP}</td><td>0.0367/0.7457</td><td>0.0365/0.6001</td><td>0.0629/0.6094</td><td>0.0370/0.6735</td><td><b>0.043275/0.657175</b></td></tr>
+  <tr><td>{CD,R,RP}</td><td>0.0388/0.7427</td><td>0.0540/0.4862</td><td>0.0571/0.6563</td><td>0.0530/0.5780</td><td>0.050725/0.6158</td></tr>
+  <tr><td>{MR,CD,R,RP}</td><td>0.0406/0.7143</td><td>0.0504/0.5051</td><td>0.0601/0.6324</td><td>0.0446/0.6142</td><td>0.048925/0.6165</td></tr>
+</table>
+
+</div>
+
+<p><b>Abbreviations:</b> MR = Macro
+
+
 The result shows that the combination of Macro Region, RUDY, and RUDY pin provides the most effective feature set for TL4VCP, achieving optimal predictive performance. Including Cell Density introduces redundant or misleading signals, reducing overall effectiveness. Among individual features, RUDY is the most informative and critical for congestion prediction, while RUDY pin is the most fragile when used alone.
 
-## Acknowledgements
 
