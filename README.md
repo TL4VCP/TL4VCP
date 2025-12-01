@@ -2,7 +2,7 @@
 
 **TL4VCP** is a congestion prediction framework that captures generalizable multi-scale layout features from abundant source designs and adapts this knowledge to scarce target designs with distinct distribution characteristics, enhancing congestion prediction for low-resource placement designs. This repository provides scripts for datasets and evaluation.
 
-- **Dataset:** The generated data is available on Hugging Face: [SynCircuitData-v0.1](https://huggingface.co/datasets/ishorn5/SynCircuitData-v0.1)
+- **Dataset:** The dataset is available on: [CircuitNet](https://circuitnet.github.io/)
 - **Purpose:** Automate the process of generating and evaluating large-scale synthetic digital circuits for research and AI applications.
 
 ---
@@ -16,8 +16,7 @@
   - [1. Skeleton Generation](#1-skeleton-generation)
   - [2. Postprocessing](#2-postprocessing)
   - [3. Cone Code Generation](#3-cone-code-generation)
-- [Evaluation](#evaluation)
-- [AI Application (PPA Task)](#ai-application-ppa-task)
+- [Ablation Study Analysis](#evaluation)
 - [Acknowledgements](#acknowledgements)
 
 ---
@@ -167,9 +166,10 @@ This combinatorial analysis allows us to quantify the contribution of each featu
 | **{CD,R,RP}** | 0.0388/0.7427 | 0.0540/0.4862 | 0.0571/0.6563 | 0.0530/0.5780 | 0.050725/0.6158 |
 | **{MR,CD,R,RP}** | 0.0406/0.7143 | 0.0504/0.5051 | 0.0601/0.6324 | 0.0446/0.6142 | 0.048925/0.6165 |
 
----
 **Abbreviations:** $MR$ = Macro Region, $CD$ = Cell Density, $R$ = RUDY, $RP$ = RUDY pin
 
 
-
 The result shows that the combination of Macro Region, RUDY, and RUDY pin provides the most effective feature set for TL4VCP, achieving optimal predictive performance. Including Cell Density introduces redundant or misleading signals, reducing overall effectiveness. Among individual features, RUDY is the most informative and critical for congestion prediction, while RUDY pin is the most fragile when used alone.
+
+## Acknowledgements
+
