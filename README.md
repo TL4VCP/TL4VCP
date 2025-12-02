@@ -70,53 +70,49 @@ pip install -r requirements.txt
 
 ## Congestion Prediciton Pipeline
 
-### 1. Process RTL files (foler: "ys_script")
+### 1. Pretrain (foler: "ys_script")
 
 ```
-   $ cd ys_script
-   $ yosys run_TinyRocket_sog.ys
-   $ python3 clean_vlg.py
+   $ python3 pretrain.py
    
-   ## Input: example/verilog/TinyRocket (original Verilog files)
-   ## Output: example/verilog/TinyRocket_sog.v (SOG Verilog)
+   ## Input: data/training_set/congestion (original CircuitNet data), train_N28.csv/train_N14.csv
+   ## Output: models/pretrain.pth
 ```
 
-* Convert the original RTL files into standard Verilog format
-  * Exmploy [Yosys](https://github.com/YosysHQ/yosys) for flattening (i.e., word-level AST) or bit-blasting (i.e., bit-level SOG).
-  * Clean the generated Verilog file ("clean_vlg.py").
+  * Load CircuitNet training data (`train_N28.csv` / `train_N14.csv`) and construct multi-scale input features.
+  * Train the backbone model to learn generalizable global–local layout representations using congestion supervision.
+  * Save the pretrained checkpoint to `models/pretrain.pth` for downstream adaptation.
 
-### 2. Verilog to Graph (folder: "vlg2ir")
+
+### 2. Fine-tune (folder: "vlg2ir")
 
 ```
-   $ cd vlg2ir
-   $ python3 auto_run.py
+   $ python3 fine_tune.py
    
-   ## Input: example/verilog/TinyRocket_sog.v
-   ## Output: example/sog/*.pkl
+   ## Input: models/pretrain.pth, data/target_dataset/superblue12
+   ## Output: models/fine_tune.pth
 ```
 
-* Parse the Verilog code and convert it to graph representation
-  * Build upon the open-source Verilog parser [Pyverilog](https://github.com/PyHDI/Pyverilog), converting the Verilog code into the abstract syntax tree (AST).
-  * Construct graph representation by traversing the AST from the Verilog parser (Details in "DG.py", "logicGraph.py", and "AST_analyzer.py").
-  * Analyze the graph for feature extraction ("graph_stat.py").
+* Load the pretrained checkpoint and the target low-resource dataset (e.g., `superblue12`).
+* Adapt the model to the target design’s distribution via supervised fine-tuning on its congestion labels.
+* Save the adapted checkpoint as `models/fine_tune.pth` for evaluation or deployment.
 
-### 3. Circuit Preprocessing (folder: "preproc")
+
+### 3. Evaluation (folder: "preproc")
 
 ```
-   ## Timing
-   $ cd preproc/timing
-   $ python3 delay_propagation.py
+   ## NRMSE SSIM
+   $ python evaluation.py
    
-   ## Power
-   $ cd preproc/power
-   $ python3 tr_propagate.py
+   ## Input: models/fine_tune.pth, superblue
+   ## Output: logs/evaluation
 ```
 
-* Preprocess the circuit graph data, including:
-  * Process the graph into a directed acyclic graph (DAG) by removing the loop of the registers ("timing/delay_propagation.py").
-  * Conduct delay propagation for timing estimation ("timing/delay_propagate.py").
-  * Perform toggle rate propagation for power prediction ("power/tr_propagate.py"). Note that the toggle rate propagation is performed at the module level and the original Verilog is partitioned using Yosys. The initial toggle rate is obtained from Design Compiler at the beginning of the synthesis process, the variable names from Yosys and DC are slightly different and need alignment.
-  
+
+* Load the fine-tuned model and target design data for congestion prediction.
+* Compute evaluation metrics such as NRMSE and SSIM to assess prediction accuracy.
+* Save the metric results and logs under `logs/evaluation` for analysis.
+
 
 ## Ablation Study Analysis
 
