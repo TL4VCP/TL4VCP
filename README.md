@@ -11,9 +11,9 @@
 - [Code Structure](#code-structure)
 - [Environment Requirements](#environment-requirements)
 - [Congestion Prediciton Pipeline](#congestion-prediciton-pipeline)
-  - [1. Skeleton Generation](#1-skeleton-generation)
-  - [2. Postprocessing](#2-postprocessing)
-  - [3. Cone Code Generation](#3-cone-code-generation)
+  - [1. Pretraining on Source Designs](#1-skeleton-generation)
+  - [2. Fine-Tuning on Target Layouts ](#2-postprocessing)
+  - [3. Congestion Prediction Evaluation](#3-cone-code-generation)
 - [Ablation Study Analysis](#ablation-study-analysis)
 
 
