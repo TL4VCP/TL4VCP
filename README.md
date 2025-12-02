@@ -70,7 +70,7 @@ pip install -r requirements.txt
 
 ## Congestion Prediciton Pipeline
 
-### 1. Pretrain (foler: "ys_script")
+### 1. Pretraining on Source Designs (file: "pretrain")
 
 ```
    $ python3 pretrain.py
@@ -84,7 +84,7 @@ pip install -r requirements.txt
   * Save the pretrained checkpoint to `models/pretrain.pth` for downstream adaptation.
 
 
-### 2. Fine-tune (folder: "vlg2ir")
+### 2. Fine-Tuning on Target Layouts (file: "fine_tune")
 
 ```
    $ python3 fine_tune.py
@@ -98,10 +98,10 @@ pip install -r requirements.txt
 * Save the adapted checkpoint as `models/fine_tune.pth` for evaluation or deployment.
 
 
-### 3. Evaluation (folder: "preproc")
+### 3. Congestion Prediction Evaluation (folder: "logs")
 
 ```
-   ## NRMSE SSIM
+   ## NRMSE & SSIM
    $ python evaluation.py
    
    ## Input: models/fine_tune.pth, superblue
