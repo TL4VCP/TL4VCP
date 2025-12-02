@@ -16,7 +16,6 @@
   - [3. Cone Code Generation](#3-cone-code-generation)
 - [Ablation Study Analysis](#ablation-study-analysis)
 
----
 
 ## Features
 
